@@ -1,19 +1,17 @@
 ﻿$(document).ready(function () {
     $("#btnsearch").on("click", function () {
         debugger
-        if ($("#txtjobTitle").val() === "" && $("#txtnationalIDNumber").val() === "") {
+        if ($("#txtCustomer").val() === "") {
             alert("Provide Details to Search !");
         }
         else {
-            var jobTitle = $.trim($("#txtjobTitle").val());
-            var nationalIDNumber = $.trim($("#txtnationalIDNumber").val());
+            var firstName = $.trim($("#txtCustomer").val());
 
             $.ajax({
                 type: "POST",
                 url: '/Search/Search',
-                data: { jobTitle: jobTitle, nationalIDNumber: nationalIDNumber },
+                data: { firstName: firstName},
                 success: function (data) {debugger
-                   // var tableData = data.filter("#success");
                     $('body').html(data);
                 },
                 error: function (xhr, err) {

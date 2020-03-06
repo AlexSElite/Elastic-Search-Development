@@ -20,43 +20,27 @@ namespace Elastic_Search_Development.Controllers
         public ActionResult Search()
         {
 
-            List<HumanResource> humanResourceModel = new List<HumanResource>();
+            List<Customer> customerModel = new List<Customer>();
             
-            return View("Search", humanResourceModel);
+            return View("Search", customerModel);
         }
 
-        //Using JSON
-
-        //[HttpPost]
-        //public JsonResult DataSearch(string jobtitle, string nationalIDNumber)
-        //{
-        //    var responsedata = _connectToElasticSearch.EsClient().Search<HumanResource>(s => s
-        //                             .Index("humanresources")
-        //                             .Size(50)
-        //                             .Query(q => q
-        //                                 .Match(m => m
-        //                                     .Field(f => f.Jobtitle)
-        //                                     .Query(jobtitle)
-        //                                 )
-        //                             )
-        //                         );
-
-        //    var datasend = (from hits in responsedata.Hits
-        //                    select hits.Source).ToList();
-
-        //    return this.Json(datasend, JsonRequestBehavior.AllowGet);
-        //}
-
+        /// <summary>
+        /// Searches Elastic Search based on the index passed in.
+        /// </summary>
+        /// <param name="jobtitle"></param>
+        /// <param name="nationalIDNumber"></param>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult Search(string jobtitle, string nationalIDNumber)
+        public ActionResult Search(string customerName)
         {
-            var responsedata = _connectToElasticSearch.EsClient().Search<HumanResource>(s => s
-                                     .Index("humanresources")
+            var responsedata = _connectToElasticSearch.EsClient().Search<Customer>(s => s
+                                     .Index("customer")
                                      .Size(50)
                                      .Query(q => q
                                          .Match(m => m
-                                             .Field(f => f.Jobtitle)
-                                             .Query(jobtitle)
+                                             .Field(f => f.CustomerId)
+                                             .Query(customerName)
                                          )
                                      )
                                  );
@@ -64,10 +48,10 @@ namespace Elastic_Search_Development.Controllers
             var datasend = (from hits in responsedata.Hits
                             select hits.Source).ToList();
 
-            List<HumanResource> humanResourceModel = new List<HumanResource>();
-            humanResourceModel = datasend;
+            List<Customer> customerModel = new List<Customer>();
+            customerModel = datasend;
 
-            return View("Search", humanResourceModel);
+            return View("Search", customerModel);
         }
     }
 }
