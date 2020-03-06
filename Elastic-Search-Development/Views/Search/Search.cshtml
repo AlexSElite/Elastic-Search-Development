@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Elastic_Search_Development.Models.HumanResource>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="txtjobTitle">Job Title</label>
+                <input type="text" class="form-control" id="txtjobTitle" placeholder="Job Title">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="txtnationalIDNumber">NationalID Number</label>
+                <input type="text" class="form-control" id="txtnationalIDNumber" placeholder="NationalID Number">
+            </div>
+        </div>
+        <br />
+        <button type="button" id="btnsearch" class="btn btn-primary">Search</button>
+        <button type="button" id="btnclear" class="btn btn-info">Clear</button>
+    </form>
+    <br />
+    <table id="theTable" class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">NationalIdNumber</th>
+                <th scope="col">LoginID</th>
+                <th scope="col">OrganizationNode</th>
+                <th scope="col">OrganizationLevel</th>
+                <th scope="col">Jobtitle</th>
+                <th scope="col">BirthDate</th>
+                <th scope="col">MaritalStatus</th>
+                <th scope="col">Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                // @Html.Partial("_Resources", Model)
+                foreach (var resource in Model)
+                {
+                    <tr>
+                    <td>@resource.NationalIdNumber</td>
+                    <td>@resource.LoginID</td>
+                    <td>@resource.OrganizationNode</td>
+                    <td>@resource.OrganizationLevel</td>
+                    <td>@resource.Jobtitle</td>
+                    <td>@resource.BirthDate</td>
+                    <td>@resource.MaritalStatus</td>
+                    <td>@resource.Gender</td>
+                </tr>
+
+                }
+            }
+            else
+            {
+                <tr>
+                    <td>No Results Found</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
