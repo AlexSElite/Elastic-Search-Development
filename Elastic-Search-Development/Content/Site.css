@@ -16,6 +16,9 @@
     white-space: normal;
 }
 
+btn-primary {
+    background-color: #00af66;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -24,8 +27,8 @@ textarea {
 }
 
 .navbar-brand {
-    color: #00af66!important;
-    font-weight:400;
+    color: #00af66 !important;
+    font-weight: 400;
 }
 
 button#btnsearch {
@@ -42,4 +45,39 @@ input#txtCustomer:focus {
     outline: none;
     border-color: #00af66;
     box-shadow: 0 0 10px #00af66;
+}
+
+/* Bootstrap Modal CSS*/
+#customerGridModal {
+    /*table-layout: fixed;
+    word-wrap: break-word;*/
+    margin-top: 20px;
+}
+
+.modal-content {
+    position: relative;
+    right: 200px;
+    top: 50px;
+}
+
+h3.modal-title {
+    position: relative;
+    right: 450px;
+}
+
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 230% !important;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+    right: 230px;
+    top: 100px;
 }

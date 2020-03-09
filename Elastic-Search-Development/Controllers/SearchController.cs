@@ -21,29 +21,40 @@ namespace Elastic_Search_Development.Controllers
         {
 
             List<Customer> customerModel = new List<Customer>();
-            
+
             return View("Search", customerModel);
         }
 
         /// <summary>
         /// Searches Elastic Search based on the index passed in.
         /// </summary>
-        /// <param name="jobtitle"></param>
-        /// <param name="nationalIDNumber"></param>
+        /// <param name="customerName"></param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult Search(string customerName)
         {
+            //var responsedata = _connectToElasticSearch.EsClient().Search<Customer>(s => s
+            //                         .Index("customer")
+            //                         .Size(50)
+            //                         .Query(q => q
+            //                             .Match(m => m
+            //                                 .Field(c => c.FirstName)
+            //                                 .Field(c => c.LastName)
+            //                                 .Query(customerName)
+            //                             )
+            //                         )
+            //                     );
+
             var responsedata = _connectToElasticSearch.EsClient().Search<Customer>(s => s
-                                     .Index("customer")
-                                     .Size(50)
-                                     .Query(q => q
-                                         .Match(m => m
-                                             .Field(f => f.CustomerId)
-                                             .Query(customerName)
-                                         )
-                                     )
-                                 );
+                                   .Index("customer")
+                                   .Size(50)
+                                   .Query(q => q
+                                       .MultiMatch(m => m
+                                           .Fields(f => f.Field(c => c.FirstName).Field(c => c.LastName))
+                                           .Query(customerName)
+                                       )
+                                   )
+                               );
 
             var datasend = (from hits in responsedata.Hits
                             select hits.Source).ToList();

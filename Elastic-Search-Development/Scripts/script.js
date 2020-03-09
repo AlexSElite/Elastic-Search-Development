@@ -1,18 +1,25 @@
 ﻿$(document).ready(function () {
-    $("#btnsearch").on("click", function () {
+    $('#customerModal').modal('hide');
+
+    $("#btnsearch").on("click", function (e) {
         debugger
         if ($("#txtCustomer").val() === "") {
-            alert("Provide Details to Search !");
+            var r = confirm("Provide Details to Search !");
+            e.stopPropagation();
         }
         else {
-            var firstName = $.trim($("#txtCustomer").val());
+            var customerName = $.trim($("#txtCustomer").val());
 
             $.ajax({
                 type: "POST",
                 url: '/Search/Search',
-                data: { firstName: firstName},
-                success: function (data) {debugger
+                data: { customerName: customerName },
+                success: function (data) {
+                    debugger
+                    e.preventDefault();
                     $('body').html(data);
+                    $('#customerNameValue').text(customerName);
+                    $('#customerModal').modal('show');
                 },
                 error: function (xhr, err) {
                     alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
