@@ -14,6 +14,15 @@ namespace Elastic_Search_Development.Models
         public string DateOfBirth { get; set; }
         public string SSN { get; set; }
         public string Email { get; set; }
-        public IEnumerable<Address> Address{get; set;}
+        public string Score { get; set; }
+
+
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string Address3 { get; set; }
+        public string City { get; set; }
+        public string StateProvince { get; set; }
+        public string PostalCode { get; set; }
+        //public List<Address> Address { get; set; }
     }
 }
