@@ -2,23 +2,23 @@
     $('#customerModal').modal('hide');
 
     $("#btnsearch").on("click", function (e) {
-        debugger
+        e.stopPropagation();
+
         if ($("#txtCustomer").val() === "") {
             var r = confirm("Provide Details to Search !");
             e.stopPropagation();
         }
         else {
-            var customerName = $.trim($("#txtCustomer").val());
+            var customerInfo = $.trim($("#txtCustomer").val());
 
             $.ajax({
                 type: "POST",
                 url: '/Search/Search',
-                data: { customerName: customerName },
+                data: { customerInfo: customerInfo },
                 success: function (data) {
-                    debugger
                     e.preventDefault();
                     $('body').html(data);
-                    $('#customerNameValue').text(customerName);
+                    $('#customerInfoValue').text(customerInfo);
                     $('#customerModal').modal('show');
                 },
                 error: function (xhr, err) {

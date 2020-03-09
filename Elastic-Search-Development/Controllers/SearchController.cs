@@ -31,7 +31,7 @@ namespace Elastic_Search_Development.Controllers
         /// <param name="customerName"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult Search(string customerName)
+        public ActionResult Search(string customerInfo)
         {
             //var responsedata = _connectToElasticSearch.EsClient().Search<Customer>(s => s
             //                         .Index("customer")
@@ -50,14 +50,27 @@ namespace Elastic_Search_Development.Controllers
                                    .Size(50)
                                    .Query(q => q
                                        .MultiMatch(m => m
-                                           .Fields(f => f.Field(c => c.FirstName).Field(c => c.LastName))
-                                           .Query(customerName)
+                                           .Fields(f => f
+                                           .Field(c => c.FirstName)
+                                           .Field(c => c.LastName)
+                                           .Field(c => c.DateOfBirth)
+                                           .Field(c => c.ssn)
+                                           .Field(c => c.Email))
+                                           .Query(customerInfo)
                                        )
                                    )
                                );
 
             var datasend = (from hits in responsedata.Hits
                             select hits.Source).ToList();
+
+            var i = 0;
+
+            foreach(var hits in responsedata.Hits)
+            {
+                datasend[i].Score = hits.Score.ToString();
+                i++;
+            }
 
             List<Customer> customerModel = new List<Customer>();
             customerModel = datasend;

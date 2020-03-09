@@ -9,6 +9,10 @@
     padding-right: 15px;
 }
 
+.hide{
+    display:none;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -17,7 +21,10 @@
 }
 
 btn-primary {
-    background-color: #00af66;
+    background-color: #00af66!important;
+}
+.primary-color {
+   color: #00af66 !important;
 }
 /* Set width on the form input elements since they're 100% wide by default */
 input,

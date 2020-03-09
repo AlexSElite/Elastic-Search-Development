@@ -12,7 +12,7 @@ namespace Elastic_Search_Development.Models
         public string LastName { get; set; }
         public string MiddleName { get; set; }
         public string DateOfBirth { get; set; }
-        public string SSN { get; set; }
+        public string ssn { get; set; }
         public string Email { get; set; }
         public string Score { get; set; }
 
