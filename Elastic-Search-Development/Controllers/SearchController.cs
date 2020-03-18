@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Elastic_Search_Development.Connector;
 using Elastic_Search_Development.Models;
+using C360IndexerTest;
 
 namespace Elastic_Search_Development.Controllers
 {
@@ -33,6 +34,11 @@ namespace Elastic_Search_Development.Controllers
         [HttpPost]
         public ActionResult Search(string customerInfo)
         {
+
+            //var listOfCustomers = Program.GetListOfCustomers();
+            ElastiSearchService elastiSearchService = new ElastiSearchService();
+           var result = elastiSearchService.ListIndexes();
+            
             //var responsedata = _connectToElasticSearch.EsClient().Search<Customer>(s => s
             //                         .Index("customer")
             //                         .Size(50)

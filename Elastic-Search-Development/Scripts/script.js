@@ -19,7 +19,7 @@
                     e.preventDefault();
                     $('body').html(data);
                     $('#customerInfoValue').text(customerInfo);
-                    $('#customerModal').modal('show');
+                    $('#customerModal').modal('hide');
                 },
                 error: function (xhr, err) {
                     alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);

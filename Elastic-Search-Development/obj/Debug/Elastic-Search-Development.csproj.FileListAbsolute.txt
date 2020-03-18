@@ -48,6 +48,7 @@ C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\roslyn\VBCSCompiler.exe
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Antlr3.Runtime.dll
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\C360IndexerTest.exe
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Elasticsearch.Net.dll
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\EntityFramework.dll
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\EntityFramework.SqlServer.dll
@@ -68,6 +69,11 @@ C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\System.Web.WebPages.dll
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\System.Web.WebPages.Razor.dll
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\WebGrease.dll
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Serilog.dll
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Serilog.Sinks.Console.dll
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Serilog.Sinks.File.dll
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\C360IndexerTest.pdb
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\C360IndexerTest.exe.config
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Elasticsearch.Net.pdb
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Elasticsearch.Net.xml
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\EntityFramework.xml
@@ -89,8 +95,12 @@ C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\System.Web.Http.xml
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\System.Web.Http.WebHost.xml
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Serilog.xml
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Serilog.Sinks.Console.xml
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Serilog.Sinks.File.pdb
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\bin\Serilog.Sinks.File.xml
+C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\obj\Debug\Elastic-Search-Development.csprojAssemblyReference.cache
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\obj\Debug\Elastic-Search-Development.csproj.CoreCompileInputs.cache
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\obj\Debug\Elastic-Search-Development.csproj.CopyComplete
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\obj\Debug\Elastic-Search-Development.dll
 C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\obj\Debug\Elastic-Search-Development.pdb
-C:\Users\asmh\source\repos\Elastic-Search-Development\Elastic-Search-Development\obj\Debug\Elastic-Search-Development.csprojAssemblyReference.cache
